@@ -1,0 +1,20 @@
+{% extends "stories/base.html" %}
+
+{% block content %}
+    <div class="card mb-3" style="max-width: 740px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{ product.image.url }}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.brand }} {{ product.model }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <p class="card-text">R {{ product.price }}</p>
+                    <br>
+                    <p class="card-text"><small class="alert alert-info"> Seller: {{ product.user }}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
