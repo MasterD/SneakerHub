@@ -1,0 +1,2 @@
+# SneakerHub
+Django project
