@@ -9,6 +9,12 @@
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">{{ product.brand }} {{ product.model }}</h5>
+                    {% if object.user == user %}
+                        <div>
+                            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'product-update' product.id %}">Update</a>
+                            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'product-delete' product.id %}">Delete</a>
+                        </div>
+                    {% endif %}
                     <p class="card-text">{{ product.description }}</p>
                     <p class="card-text">R {{ product.price }}</p>
                     <br>

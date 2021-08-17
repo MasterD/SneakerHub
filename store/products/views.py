@@ -43,3 +43,15 @@ class UpdateProductView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             return True
         else:
             return False
+
+class DeleteProductView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Product
+    success_url = '/product'
+
+    def test_func(self):
+        post = self.get_object()
+
+        if self.request.user == post.user:
+            return True
+        else:
+            return False
